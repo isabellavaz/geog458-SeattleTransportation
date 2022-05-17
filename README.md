@@ -31,7 +31,9 @@ Seattle skyline in 2005
 
 ![Seattle skyline](img/SeattleSkyline.jpg)
 
-project format: option two: Smart dashboard
+### Project format: option two: Smart dashboard
+
+When planning our project interface, we wanted to balance all of the visuals with pertinent information on the dashboard, to make ot visually appealing and easy to understand as a first-time user. We also wanted to make the most important information stand out, with the ability to dive deeper into the interface if more information were to be desired by the user. Therefore, we wanted to create charts that showcase year-to-date data and real-time data that are easy to understand immediately, as well as graphs that can be narrowed down more specifically to areas of Seattle. We will primarily be using bar charts to showcase the breakdown of traffic in Seattle, with otehr supporting maps and charts.
 
 How to arrange all the components on the graphical user interface (GUI)?
 What are the coordinated charts you plan to make?

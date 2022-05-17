@@ -23,6 +23,7 @@ Information about traffic in the Seattle area and how the downtown area has deve
 
 
 ![Seattle skyline in 2005](img/SeattleSkyline.jpg)
+
 Seattle skyline in 2005
 
 project format: option two: Smart dashboard

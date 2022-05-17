@@ -22,7 +22,7 @@ multimedia (e.g., external links, texts, images, youtube videos, etc.):
 Information about traffic in the Seattle area and how the downtown area has developed (i.e. growth of tech companies downtown like Amazon). Photos and video of traffic in the area, such as on I-5.
 
 Seattle skyline in 2005
-![](img/seattleskyline.png)
+![](img/SeattleSkyline.jpg)
 
 
 project format: option two: Smart dashboard

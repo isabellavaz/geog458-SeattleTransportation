@@ -32,11 +32,8 @@ Seattle skyline in 2005
 ![Seattle skyline](img/SeattleSkyline.jpg)
 
 ### Project format: option two: Smart dashboard
+For our project, we will be using the EPSG:3857 projection. We will have four zoom levels, and it will be centerd on the City of Seattle, as that is the focus of our project. We want to provide the ability to zoom in order to provide more localized data for the user. Our basemap will include streets and buildings, in order to be the most commuter-friendly. We will also add thematic layers that include natural fixtures such as water, as well as highlighting infrastructure such as bridges, bus stops, and link stations. These thematic layers will ensure it is appropriate for our intended audience. We will be using a proportional symbol and color coded map in order to differentiate traffic congestion and the necessary locations and symbols.
+
+iii. vector or raster layer. If it is a vector, which data attribute to use? If raster, which zoom level and presumed boundingbox to use?
 
 When planning our project interface, we wanted to balance all of the visuals with pertinent information on the dashboard, to make ot visually appealing and easy to understand as a first-time user. We also wanted to make the most important information stand out, with the ability to dive deeper into the interface if more information were to be desired by the user. Therefore, we wanted to create charts that showcase year-to-date data and real-time data that are easy to understand immediately, as well as graphs that can be narrowed down more specifically to areas of Seattle. We will primarily be using bar charts to showcase the breakdown of traffic in Seattle, with otehr supporting maps and charts.
-
-How to arrange all the components on the graphical user interface (GUI)?
-What are the coordinated charts you plan to make?
-i. javascript that supports the making of a chart.
-ii. type of chart (e.g., line, bar, pie, etc.)
-iii. data attributes to be visualized.

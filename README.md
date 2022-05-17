@@ -25,9 +25,11 @@ As previously stated, the target audience of this project is the people of Seatt
 Information about traffic in the Seattle area and how the downtown area has developed (i.e. growth of tech companies downtown like Amazon). Photos and video of traffic in the area, such as on I-5.
 
 
-![Seattle skyline in 2005](img/SeattleSkyline.jpg)
+![Seattle skyline in 2005](img/skyline2005.png)
 
 Seattle skyline in 2005
+
+![Seattle skyline](img/SeattleSkyline.jpg)
 
 project format: option two: Smart dashboard
 

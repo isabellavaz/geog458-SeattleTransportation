@@ -2,7 +2,8 @@
 
 ### Seattle Transportation Over Time
 
-project significance and broader impacts:
+### Project Significance and Broader Impacts:
+The project highlights the function of traffic in Seattle. The target audience of this project is the people of Seattle, especially commuters. Therefore, the intended audience most likely already have a good understanding that traffic in big cities can be congested and plays a big role in the commutes of those living in the city. As a result, the intended audience also is aware that gas can be pretty expensive, and there are significant environmental effects from large amounts of vehicle commuters. This project shows exactly how these things are occurring, utilizing both historical data to analyze traffic trends and year-to-date differences, as well as real-time data that can be utilized by the average person to know where the current most congested areas are. As far as potentially negative broader impacts of this project, it’s a little hard to say exactly. In general, there has been a bigger push to lean more towards public transport and shift away from the car dependency that the US has, and this project fits into that as the issue of intense city traffic is alleviated as more public transportation and infrastructure is implemented. One issue that has occurred from that is the placement of public transport stations. There is a proposed link station in the International District of Seattle that would displace long-standing businesses in the area. So, vulnerable areas without much of a voice can be left damaged as we push more towards changes in how transportation is working. As such, it is important to consider how we continue to shift to a more sustainable transportation future in cities, as we want to preserve the areas of importance to the people living there.
 
 
 primary functions and major data sources:

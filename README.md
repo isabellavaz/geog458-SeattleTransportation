@@ -18,10 +18,10 @@ Our primary function for this project is to create a resource that tracks Seattl
 - King County Metro Routes and Transit Centers: https://gis-kingcounty.opendata.arcgis.com/search?q=King%20County%20Metro%20Routes 
 
 
-targeted audience:
-Communities in the Seattle area, specifically commuters who drive their own vehicles as well as those who utilize public transportation.
+### Target Audience:
+As previously stated, the target audience of this project is the people of Seattle, especially commuters, including both those who use their own vehicles as well as those who use public transportation.
 
-multimedia (e.g., external links, texts, images, youtube videos, etc.):
+### Multimedia (e.g., external links, texts, images, youtube videos, etc.):
 Information about traffic in the Seattle area and how the downtown area has developed (i.e. growth of tech companies downtown like Amazon). Photos and video of traffic in the area, such as on I-5.
 
 

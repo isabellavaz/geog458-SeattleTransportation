@@ -5,6 +5,10 @@ body {
     margin: 0;
 }
 
+* {
+    transition: all 500ms ease;
+}
+
 nav {
     background-color: #888888;
     padding: 4px;
@@ -66,6 +70,16 @@ h1 {
 
 h2 {
     font-size: 20px;
+}
+
+:link, :visited {
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    border-color: black;
 }
 
 .hidden {

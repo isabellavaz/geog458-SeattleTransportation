@@ -1,0 +1,70 @@
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: linear-gradient(to right, #fff 50%, rgba(157, 10, 10, 0.63) 50%);
+    line-height: 1.2;
+    margin: 0;
+}
+
+nav {
+    background-color: #888888;
+    padding: 4px;
+    min-width: min(400px, 45vw);
+    width: fit-content;
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    display: flex;
+    justify-content: stretch;
+    gap: 8px;
+}
+
+nav button {
+    border: 0;
+    padding: 4px 16px;
+    background-color: #c4c4c4;
+    font-size: 18pt;
+    width: 100%;
+    cursor: pointer;
+}
+
+nav button.selected {
+    background-color: #B3D3E5;
+}
+
+main > section {
+    display: flex;
+    justify-content: stretch;
+}
+
+main > section > section {
+    padding: 16px;
+    flex: 1 0;
+}
+
+main > section > section:nth-of-type(2) {
+    padding-top: 70px;
+}
+
+header {
+    background-color: #B3D3E5;
+    width: fit-content;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+h1, h2 {
+    font-weight: normal;
+    margin: 0;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.hidden {
+    display: none;
+}

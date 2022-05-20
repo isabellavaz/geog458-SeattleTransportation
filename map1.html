@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Choropleth Map of Seattle Traffic</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+      h2, h3 {
+          margin: 10px;
+          font-size: 18px;
+      }
+      h3 {
+          font-size: 16px;
+      }
+      p {
+          margin: 10px;
+      }
+      #map {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+      }
+
+      .map-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background: rgba(255, 255, 255, 0.8);
+          border-style: solid;
+          border-width: 1px;
+          border-color: rgba(0, 0, 0, 0.2);
+          margin-left: 20px;
+          font-family: 'Open Sans', sans-serif;
+          overflow: auto;
+          border-radius: 3px;
+      }
+
+      #features {
+          top: 0;
+          height: 100px;
+          margin-top: 20px;
+          width: 250px;
+      }
+
+      .legend-key {
+          display: inline-block;
+          border-radius: 20%;
+          width: 10px;
+          height: 10px;
+          margin-right: 5px;
+      }
+
+      .mapboxgl-canvas-container.mapboxgl-interactive,
+      .mapboxgl-ctrl-group button.mapboxgl-ctrl-compass {
+      cursor: unset;
+      }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class='map-overlay' id='features'>
+        <h2>Traffic in Seattle By Area</h2>
+        <div id='text-escription'>
+            <p>Hover over an area to see the traffic density!</p>
+        </div>
+    </div>
+    <div class='map-overlay' id='legend'></div>
+    <script>
+        // initialize basemmap
+        mapboxgl.accessToken =
+            'pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw';
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            projection: 'albers',
+            zoom: 4, // starting zoom
+            center: [-100, 40] // starting center
+        });
+
+        // load data and add as layer
+        async function geojsonFetch() {
+            let response = await fetch('assets/2018_Traffic_Flow_Counts.geojson');
+            let rateData = await response.json();
+
+            map.on('load', function loadingData() {
+                map.addSource('rateData', {
+                    type: 'geojson',
+                    data: rateData
+                });
+
+                map.addLayer({
+                    'id': 'rateData-layer',
+                    'type': 'fill',
+                    'source': 'rateData',
+                    'paint': {
+                        'fill-color': [
+                            'step',
+                            ['get', 'rates'],
+                            '#FFEDA0', 
+                            50, 
+                            '#FED976', 
+                            150, 
+                            '#FEB24C', 
+                            250, 
+                            '#FD8D3C', 
+                            350, 
+                            '#FC4E2A', 
+                            450, 
+                            '#E31A1C', 
+                            550, 
+                            '#BD0026', 
+                            650, 
+                            "#800026" 
+                        ],
+                        'fill-outline-color': '#BBBBBB',
+                        'fill-opacity': 0.7,
+                    }
+                });
+
+                const layers = [
+                    '0-49',
+                    '50-149',
+                    '150-249',
+                    '250-349',
+                    '350-449',
+                    '450-549',
+                    '550-649',
+                    '650 and more'
+                ];
+                const colors = [
+                    '#FFEDA0',
+                    '#FED976',
+                    '#FEB24C',
+                    '#FD8D3C',
+                    '#FC4E2A',
+                    '#E31A1C',
+                    '#BD0026',
+                    '#800026'
+                ];
+
+                // legend
+                const legend = document.getElementById('legend');
+                legend.innerHTML = "<b>Traffic Data in Seattle 2018<br></b><br><br>";
+                const source =
+                    '<p style="text-align: right; font-size:10pt"> Data Source: <a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/2018-traffic-flow-counts">The Seattle City Gis Open Data</a></p>';
+
+                layers.forEach((layer, i) => {
+                    const color = colors[i];
+                    const item = document.createElement('div');
+                    const key = document.createElement('span');
+                    key.className = 'legend-key';
+                    key.style.backgroundColor = color;
+
+                    const value = document.createElement('span');
+                    value.innerHTML = `${layer}`;
+                    item.appendChild(key);
+                    item.appendChild(value);
+                    legend.appendChild(item);
+                });
+                legend.innerHTML += source;
+            });
+
+        }
+        geojsonFetch();
+    </script>
+
+</body>
+
+</html>

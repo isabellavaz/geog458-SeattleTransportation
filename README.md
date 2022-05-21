@@ -13,7 +13,7 @@ Our primary function for this project is to create a resource that tracks Seattl
 
 - [2018 Seattle Traffic Count](https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::2018-traffic-flow-counts/explore?location=47.619630%2C-122.338100%2C12.00)
 
-- {(2007-18) Feature Layers](https://data-seattlecitygis.opendata.arcgis.com/search?sort=name&tags=flow%2Ctraffic&type=feature%20layer) 
+- [(2007-18) Feature Layers](https://data-seattlecitygis.opendata.arcgis.com/search?sort=name&tags=flow%2Ctraffic&type=feature%20layer) 
 
 - [King County Metro Routes and Transit Centers](https://gis-kingcounty.opendata.arcgis.com/search?q=King%20County%20Metro%20Routes)
 

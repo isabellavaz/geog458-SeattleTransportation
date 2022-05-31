@@ -76,34 +76,11 @@ cursor: ew-resize;
 	mapboxgl.accessToken = 'pk.eyJ1IjoiaXNhYmVsbGF2YXoiLCJhIjoiY2wzZ2dveGF4MGNzcjNibzNzdTNjaGJkZiJ9.oDapwhbJIYo2l9dYIU6KQQ';
 const map = new mapboxgl.Map({
 container: 'map',
-style: 'mapbox://styles/mapbox/light-v10',
+style: 'mapbox://styles/mapbox/dark-v10',
 center: [47.62157845614892, -122.35182378584614],
 zoom: 0.5
 });
  
-const months = [
-'January',
-'February',
-'March',
-'April',
-'May',
-'June',
-'July',
-'August',
-'September',
-'October',
-'November',
-'December'
-];
- 
-function filterBy(month) {
-const filters = ['==', 'month', month];
-map.setFilter('earthquake-circles', filters);
-map.setFilter('earthquake-labels', filters);
- 
-// Set the label to the month
-document.getElementById('month').textContent = months[month];
-}
  
 map.on('load', () => {
 // Data courtesy of http://earthquake.usgs.gov/

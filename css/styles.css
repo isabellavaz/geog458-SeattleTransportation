@@ -1,0 +1,116 @@
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: linear-gradient(to right, #fff 50%, rgba(157, 10, 10, 0.63) 50%);
+    line-height: 1.2;
+    margin: 0;
+}
+
+* {
+    transition: all 500ms ease;
+}
+
+nav {
+    background-color: #888888;
+    padding: 4px;
+    min-width: min(400px, 45vw);
+    width: fit-content;
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    display: flex;
+    justify-content: stretch;
+    gap: 8px;
+}
+
+nav button {
+    border: 0;
+    padding: 4px 16px;
+    background-color: #c4c4c4;
+    font-size: 18pt;
+    width: 100%;
+    cursor: pointer;
+}
+
+nav button.selected {
+    background-color: #B3D3E5;
+}
+
+main > section {
+    display: flex;
+    justify-content: stretch;
+}
+
+main > section > section {
+    padding: 16px;
+    flex: 1 0;
+}
+
+main > section > section:nth-of-type(2) {
+    padding-top: 70px;
+}
+
+header {
+    background-color: #B3D3E5;
+    width: fit-content;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+:link, :visited {
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    border-color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+#about ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+#about li {
+    list-style-type: none;
+    margin: 16px 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#about li img {
+    border-radius: 50%;
+    width: 80px;
+    margin-right: 8px;
+}
+
+#about li strong, #about li em {
+    display: block;
+}
+
+#about section:nth-of-type(2) p:first-of-type {
+    height: 40%;
+}

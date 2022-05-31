@@ -9,13 +9,13 @@ The project highlights the function of traffic in Seattle. The target audience o
 ### Primary Functions and Major Data Sources:
 Our primary function for this project is to create a resource that tracks Seattle traffic over time in order to allow for historical and real-time analysis. This dashboard will allow the user to see how traffic in Seattle has changed over the last few years, over the Covid-19 pandemic, and how it changes during the day. This resource is made possible by the data from WSDOT and King County, which are the two primary sources. All of our sources, however, are linked below:
 
-- Gas Prices by Time: https://datahub.io/core/natural-gas#readme 
+- [Gas Prices by Time](https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=pet&s=emm_epmru_pte_y48se_dpg&f=m)
 
-- 2018 Seattle Traffic Count: https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::2018-traffic-flow-counts/explore?location=47.619630%2C-122.338100%2C12.00 
+- [2018 Seattle Traffic Count](https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::2018-traffic-flow-counts/explore?location=47.619630%2C-122.338100%2C12.00)
 
-- (2007-18) Feature Layers: https://data-seattlecitygis.opendata.arcgis.com/search?sort=name&tags=flow%2Ctraffic&type=feature%20layer 
+- [(2007-18) Feature Layers](https://data-seattlecitygis.opendata.arcgis.com/search?sort=name&tags=flow%2Ctraffic&type=feature%20layer) 
 
-- King County Metro Routes and Transit Centers: https://gis-kingcounty.opendata.arcgis.com/search?q=King%20County%20Metro%20Routes 
+- [King County Metro Routes and Transit Centers](https://gis-kingcounty.opendata.arcgis.com/search?q=King%20County%20Metro%20Routes)
 
 
 ### Target Audience:

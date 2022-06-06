@@ -1,5 +1,5 @@
 function parseCSV(createGraph) {
-    Papa.parse("../assets/seattlegasprices.csv", {
+    Papa.parse("assets/seattlegasprices.csv", {
         download: true,
         complete: function(results) {
             createGraph(results.data);

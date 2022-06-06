@@ -82,6 +82,12 @@ a:hover {
     border-color: black;
 }
 
+iframe {
+    border: 0;
+    width: 100%;
+    min-height: 400px;
+}
+
 .hidden {
     display: none;
 }

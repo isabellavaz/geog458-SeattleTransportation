@@ -72,11 +72,18 @@ h2 {
     font-size: 20px;
 }
 
-:link, :visited {
-    color: black;
+
+a:link {
+    color: green;
+    background-color: transparent;
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-}
+  }
+  
+  a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+  }
 
 a:hover {
     border-color: black;

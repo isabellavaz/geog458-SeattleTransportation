@@ -72,21 +72,17 @@ h2 {
     font-size: 20px;
 }
 
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
 
 a:link {
     color: green;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: pink;
-    background-color: transparent;
-    text-decoration: none;
-  }
+}
 
-a:hover {
-    border-color: black;
+a:visited {
+    color: pink;
 }
 
 iframe {
@@ -117,6 +113,8 @@ iframe {
 #about li img {
     border-radius: 50%;
     width: 80px;
+    height: 80px;
+    object-fit: cover;
     margin-right: 8px;
 }
 

@@ -20,6 +20,7 @@
      */
     function showPage() {
         const sections = qsa('main > section');
+        console.log(sections);
         for (const section of sections) {
             if (section.id === this.dataset.target) {
                 section.classList.remove('hidden');

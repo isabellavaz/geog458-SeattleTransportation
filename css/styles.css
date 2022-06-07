@@ -35,7 +35,12 @@ nav button.selected {
     background-color: #B3D3E5;
 }
 
-main > section {
+/*main > section {
+    display: flex;
+    justify-content: stretch;
+}*/
+
+.leftright {
     display: flex;
     justify-content: stretch;
 }
@@ -128,4 +133,19 @@ iframe {
 
 #real-dashboard {
    outline: 4px solid gray; 
+   display: flex;  
+   margin: auto;
+   flex-wrap: wrap;
+   float: left;
+   
+}
+
+#alignment {
+    display: flex;
+    justify-content: center;
+}
+
+.med-info iframe {
+    max-height: 350px;
+    max-width: 850px;
 }

@@ -134,10 +134,12 @@ iframe {
 #real-dashboard {
    outline: 4px solid gray; 
    display: flex;  
-   margin: auto;
+   width: 1050px;
    flex-wrap: wrap;
-   float: left;
-   
+}
+
+#real-dashboard section {
+    width: 1050px;
 }
 
 #alignment {
@@ -146,6 +148,6 @@ iframe {
 }
 
 .med-info iframe {
-    max-height: 350px;
+    height: 350px;
     max-width: 850px;
 }

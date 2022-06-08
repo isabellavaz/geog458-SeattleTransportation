@@ -1,6 +1,6 @@
 body {
     font-family: 'Source Sans 3', sans-serif;
-    background: linear-gradient(to right, #fff 50%, rgba(157, 10, 10, 0.63) 50%);
+    background: linear-gradient(to right, #fff 50%, rgba(27, 115, 131, 0.63) 50%);
     line-height: 1.2;
     margin: 0;
 }
@@ -55,7 +55,7 @@ main > section > section:nth-of-type(2) {
 }
 
 header {
-    background-color: #B3D3E5;
+    background-color: #005180;
     width: fit-content;
     padding: 8px;
     margin-bottom: 16px;

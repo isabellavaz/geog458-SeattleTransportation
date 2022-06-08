@@ -151,3 +151,7 @@ iframe {
     height: 350px;
     max-width: 850px;
 }
+
+#dashboard img {
+    width: 100%;
+}

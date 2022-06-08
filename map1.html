@@ -7,6 +7,7 @@
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
       h2, h3 {
           margin: 10px;
@@ -45,7 +46,7 @@
           top: 0;
           height: 100px;
           margin-top: 20px;
-          width: 250px;
+          min-width: 250px;
       }
 
       .legend-key {
@@ -67,7 +68,7 @@
     <div id="map"></div>
     <div class='map-overlay' id='features'>
         <h2>Traffic in Seattle By Area</h2>
-        <div id='text-description'>
+        <div id='text-escription'>
             <p>Hover over an area to see the traffic density!</p>
         </div>
     </div>
@@ -102,21 +103,21 @@
                     'paint': {
                         'fill-color': [
                             'step',
-                            ['get', 'rates'],
+                            ['get', 'AWDT'],
                             '#FFEDA0', 
-                            50, 
+                            1000, 
                             '#FED976', 
-                            150, 
+                            5000, 
                             '#FEB24C', 
-                            250, 
+                            10000, 
                             '#FD8D3C', 
-                            350, 
+                            15000, 
                             '#FC4E2A', 
-                            450, 
+                            20000, 
                             '#E31A1C', 
-                            550, 
+                            30000, 
                             '#BD0026', 
-                            650, 
+                            40000, 
                             "#800026" 
                         ],
                         'fill-outline-color': '#BBBBBB',
@@ -125,14 +126,14 @@
                 });
 
                 const layers = [
-                    '0-49',
-                    '50-149',
-                    '150-249',
-                    '250-349',
-                    '350-449',
-                    '450-549',
-                    '550-649',
-                    '650 and more'
+                    '0-1,000',
+                    '1,000-5,000',
+                    '5,000-10,000',
+                    '10,000-15,000',
+                    '15,000-20,000',
+                    '20,000-30,000',
+                    '30,000-40,000',
+                    '40,000 and more'
                 ];
                 const colors = [
                     '#FFEDA0',
@@ -147,7 +148,7 @@
 
                 // legend
                 const legend = document.getElementById('legend');
-                legend.innerHTML = "<b>Traffic Data in Seattle 2018<br></b><br><br>";
+                legend.innerHTML = "<b>Traffic Data in Seattle 2018<br></b><p>Average Weekday Traffic Volumes<br><em>1,000s of Vehicles</em></p><br>";
                 const source =
                     '<p style="text-align: right; font-size:10pt"> Data Source: <a href="https://data-seattlecitygis.opendata.arcgis.com/datasets/2018-traffic-flow-counts">The Seattle City Gis Open Data</a></p>';
 
@@ -165,6 +166,19 @@
                     legend.appendChild(item);
                 });
                 legend.innerHTML += source;
+
+                map.on('mousemove', ({point}) => {
+                    const area = map.queryRenderedFeatures(point, {
+                        layers: ['rateData-layer']
+                    });
+                    document.getElementById('text-escription').innerHTML = area.length ?
+                        `<h3>${area[0].properties.STNAME_ORD}</h3>
+                        <p>
+                            <em>
+                                <strong>${area[0].properties.AWDT.toLocaleString()}</strong> thousands average weekday vehicles
+                            </em>
+                        </p>` : '<p>Hover over an area to see the traffic density!</p>';
+                });
             });
 
         }

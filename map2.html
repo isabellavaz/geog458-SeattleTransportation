@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+          <title>Map2</title>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"/>
+</head>
+<body>
+          <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<!--add external GeoJSON source  -->
+          <div id="mapid" style="width: 800px; height: 600px; margin:auto;"></div>
+          <script>
+          var mymap = L.map('mapid', { center:[47.6062, -122.3321],  zoom:10 });
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
+function popStyle(feature){
+          return {fillColor:classification(feature.properties.TotPop),
+          weight:1,
+          opacity:1,
+          color:'white',
+          fillOpacity:0.85};}
+function classification(x){
+          return x > 5000? '#006d2c':
+           x > 4000? '#2ca25f':
+           x > 3000? '#66c2a4':
+          x > 2000? '#99d8c9':
+          x > 1000? '#ccece6': '#a6bddb';}
+
+// single layer classification color
+function classificationD(x){
+          return x > 1400? '#08519c':
+           x > 1100? '#3182bd':
+           x > 700? '#6baed6':
+          x > 400? '#bdd7e7':
+          x > 10? '#eff3ff': '#a6bddb';}
+
+function newStyle(e) {var layer = e.target; layer.setStyle({weight:5});}
+function oldStyle(e) {tripleLayer.resetStyle(e.target);}
+
+
+
+var tripleLayer = L.geoJSON(false, {style:function (feature) {return { fillColor: classification(feature.properties.AADT), weight: 1, opacity: 1, color: 'white', fillOpacity: 0.85}}});
+
+var singleLayer = L.geoJSON(false, {style:function (feature){return { fillColor: classificationD(feature.properties.AADT), weight: 1, opacity: 1, color: 'white', fillOpacity: 0.85}}});
+          $.getJSON("https://data.wsdot.wa.gov/arcgis/rest/services/Shared/TrafficData/MapServer/0/query?outFields=*&where=1%3D1&f=geojson", function(data){tripleLayer.addData(data); });
+
+          // function triple(){
+          //           tripleLayer.addTo(mymap);
+          // mymap.removeLayer(tripleLayer);
+          // mymap.removeLayer(singleLayer);
+          // }
+
+function poptriple(){
+                    tripleLayer.addTo(mymap);
+          // mymap.removeLayer(pop2000Layer);
+          mymap.removeLayer(singleLayer);
+          }
+
+          // 3rd button event
+          function popsingle(){
+            singleLayer.addTo(mymap);
+          // mymap.removeLayer(pop2000Layer);
+          mymap.removeLayer(tripleLayer);
+          }
+
+          // 3rd layer
+          // var demoLayer = L.geoJSON(false, {style:function (feature){return { fillColor: classificationD(feature.properties.NC2), weight: 1, opacity: 1, color: 'white', fillOpacity: 0.85}}}).addTo(mymap);
+
+//           $.getJSON("$.getJSON("https://opendata.arcgis.com/datasets/42ba035b52b14df3b9b16653e8a1e46c_2593.geojson", function(data){pop2010Layer.addData(data); });
+// ", function(data){pop2010Layer.addData(data); });
+$.getJSON("https://services.arcgis.com/IYrj3otxNjPsrTRD/ArcGIS/rest/services/HistoricTrafficData_2/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson", function(data){singleLayer.addData(data); });
+
+        </script>
+        <!-- <button onclick="pop2000()">Total Population in 2000</button> -->
+
+        <button onclick="poptriple()">2020 Traffic Flow</button>
+
+        <button onclick="popsingle()">2010 Traffic Flow</button>
+
+
+</body>
+</html>

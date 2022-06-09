@@ -50,7 +50,9 @@
 
         geojsonFetch(map);
         document.getElementById('slider').addEventListener('input', function() {
-            document.getElementById('year').textContent = this.value;
+            const yearEl = document.getElementById('year');
+            yearEl.textContent = this.value;
+            if (data[this.value].error) yearEl.textContent += ' (⚠️ error getting data)';
             map.removeLayer('rateData-layer');
             map.addLayer({
                 'id': 'rateData-layer',

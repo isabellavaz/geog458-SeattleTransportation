@@ -81,3 +81,11 @@ p {
 .hidden {
     display: none !important;
 }
+
+label {
+    margin-left: 10px;
+}
+
+input {
+    vertical-align: middle;
+}

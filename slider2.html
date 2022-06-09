@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Seattle Traffic</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/slider2.css">
+        <script src="js/slider2.js"></script>
+    </head>
+
+    <body>
+        <div id="loading">⏳ Loading...</div>
+        <div id="map"></div>
+        <div class='map-overlay' id='features'>
+            <h2>Traffic in Seattle By Area</h2>
+            <label>
+                Year
+                <input type="range" value="2018" min="2010" max="2018" step="1" id="slider">
+            </label>
+            <span id="year">2018</span>
+            <div id='text-escription'>
+                <p>Hover over a street to see the traffic density!</p>
+            </div>
+        </div>
+        <div class='map-overlay' id='legend'></div>
+    </body>
+</html>

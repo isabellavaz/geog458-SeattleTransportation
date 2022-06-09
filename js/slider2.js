@@ -82,7 +82,7 @@
                         40000,
                         "#800026"
                     ],
-                    'line-width': 2,
+                    'line-width': 4,
                 }
             });
         });
@@ -130,9 +130,7 @@
                     40000,
                     "#800026"
                 ],
-                'line-width': 2,
-                // 'fill-outline-color': '#BBBBBB',
-                // 'fill-opacity': 0.7,
+                'line-width': 4,
             }
         });
 
@@ -161,7 +159,7 @@
             const area = map.queryRenderedFeatures(point, {
                 layers: ['rateData-layer']
             });
-            document.getElementById('text-escription').innerHTML = area.length ?
+            document.getElementById('text-description').innerHTML = area.length ?
                 `<h3>${area[0].properties.STNAME_ORD ?? area[0].properties.STNAME ?? 'Unknown Street'}</h3>
                 <p>
                     <em>
